@@ -306,6 +306,10 @@ h3{
 }
 
 
+.all-characters{
+    flex-direction: column;
+    width: 100%;
+}
 
 .characters-container{
     /* height: 100vh; */
