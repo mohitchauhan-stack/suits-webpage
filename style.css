@@ -1,413 +1,394 @@
-
-
+/* FONT FAMILIES */
 @font-face {
 font-family:
     'ClashDisplay-Regular';
-src:
-    url('./font/ClashDisplay-Regular.ttf') format('truetype');
-font-weight: 400;
-font-display: swap;
-font-style: normal;
+    src:
+        url('./font/ClashDisplay-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-display: swap;
+        font-style: normal;
 }
-
 @font-face {
-  font-family: 'ClashDisplay-Semibold';
-  src:
-    url('./font/ClashDisplay-Semibold.ttf') format('truetype');
-  font-weight: 600;
-  font-display: swap;
-  font-style: normal;
+    font-family: 'ClashDisplay-Semibold';
+    src:
+        url('./font/ClashDisplay-Semibold.ttf') format('truetype');
+        font-weight: 600;
+        font-display: swap;
+        font-style: normal;
 }
-
 @font-face {
 font-family:
     'ClashDisplay-Bold';
-src:
-    url('./font/ClashDisplay-Bold.ttf') format('truetype');
-font-weight: 700;
-font-display: swap;
-font-style: normal;
+    src:
+        url('./font/ClashDisplay-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-display: swap;
+        font-style: normal;
 }
 
+/* ROOT CLASSES */
+:root{
+    /* COLORS */
+    --black: #000000;
+    --grey: #919191;
+    --white: #ffffff;
+
+    /* FONT WEIGHTS */
+    --font-weight-normal: 400;
+    --font-weight-semiBold: 600;
+    --font-weight-bold: 700;
+
+    /* LINE HEIGHT */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+
+    /* FONT FAMILY */
+    --font-family-normal: "ClashDisplay-Regular";
+    --font-family-semiBold: "ClashDisplay-Semibold";
+    --font-family-bold: "ClashDisplay-Bold";
+
+    /* FONT SIZES */
+    --text-sm: 1.2rem;
+    --text-base: 1.6rem;
+    --text-paragraph: 2rem;
+    --text-h5: 2.4rem;
+    --text-h4: 3.2rem;
+    --text-h3: 4rem;
+    --text-h2: 4.4rem;
+    --text-h1: 6.5rem;
+
+    /* HEADING COLORS */
+    --heading-color: var(--black);
+    --text-color: var(--black);
+
+    /* MARGIN INLINE */
+    --margin-inline-small: 0rem 2rem;
+    --margin-inline-medium: 0rem 4rem;
+    --margin-inline-large: 0rem 6rem;
+    /* MARGIN BLOCK */
+    --margin-block-small: 2rem 0rem;
+    --margin-block-medium: 4rem 0rem;
+    --margin-block-large: 6rem 0rem;
+
+    /* MISCELLANEOUS */
+    --nav-height: 100px; /* Update the value in the flexbox topic */
+
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'ClashDisplay-Regular';
+    font-family: 'ClashDisplay-Regular', 'ClashDisplay-Semibold' , 'ClashDisplay-Bold', 'Helvetica Neue', Arial, sans-serif;
 }
-
-html, body {
-    height: 100%;
-    width: 100%;
+html{
+    font-size: 62.5%;
 }
-
-a{
+body {
+    padding-top: calc(var(--nav-height) + 2rem);
+    color: var(--text-color);
+}
+body {
+    line-height: var(--line-height-normal);
+    color: var(--black);
+}
+.container {
+    max-width: 1310px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h1, h2, h3, h4, h5 {
+    font-family: var(--font-family-normal);
+    font-weight: var(--font-weight-normal);
+    color: var(--heading-color);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+}
+h1 {
+    font-size: var(--text-h1);
+    font-family: var(--font-family-bold);
+    font-weight: var(--font-weight-bold);
+}
+h2 {
+    font-family: var(--font-family-semiBold);
+    font-size: var(--text-h2);
+    font-weight: var(--font-weight-semiBold);
+}
+h3 {
+    font-size: var(--text-h3);
+}
+h4 {
+    font-size: var(--text-h4);
+}
+h5 {
+    font-size: var(--text-h5);
+}
+p {
+    font-size: var(--text-paragraph);
+}
+a {
     text-decoration: none;
-    color: black;
+    font-size: var(--text-base);
+    display: inline-block;
+}
+a:link, a:visited {
+    color: var(--black);
+}
+a:hover, a:active{
+    color: var(--grey);
+}
+ul {
+    list-style: none;
+}
+span {
+    display: inline-block;
+}
+.small-text {
+    font-size: var(--text-sm);
 }
 .flex{
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-h1{
-    font-size: 5vw;
-    font-family: 'ClashDisplay-Semibold';
-}
-h2{
-    font-size: 3vw;
-    font-family: 'ClashDisplay-Regular';
-}
-h3{
-    font-size: 1.5vw;
-    font-family: 'ClashDisplay-Regular';
+    align-items: center;
 }
 
-
-.nav-container{
-    height: 10vh;
-    width: 100%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    margin: 2vh 0vh;
-    position: relative;
+/* ----------------------- COMPONENTS --------------------- */
+.highlight {
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
-.nav-bar{
+.highlight-primary {
+    background-color: var(--black);
+    margin-bottom: .2rem;
+}
+/* ----------------------- SECTIONS ----------------------- */
+
+/* ------ NAVBAR ------ */
+.navbar{
+    height: var(--nav-height);
     justify-content: space-between;
-    padding: 0vh 2vh;
-    position: absolute;
-    height: 100%;
+    margin: var(--margin-block-small);
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+    position: fixed;
+    top: 0%;
     width: 100%;
+    backdrop-filter: blur(25px);
+    z-index: 99;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
-
-.nav-bar #logo{
-    position: relative;
-    line-height: 1.1;
+.navbar a>h1, .link{
+    text-shadow: .4px .4px .4px rgba(255, 255, 255, 1);
 }
-
-#trademark{
-    position: absolute;
-    top: 2px;
-    left: 260px;
-    font-size: 1.2vw;
-    border: none;
+.logo-mdn{
+    margin:  var(--margin-inline-large);
 }
-
-#nav-options{
-    transition: text-decoration 1s ease-in-out;
+.nav-links{
+    gap: 10rem;
+    margin: var(--margin-inline-large);
 }
-
-#nav-options:hover{
+.link:hover{
     text-decoration: underline;
 }
 
-.hero-container{
-    height: 90vh;
-    width: 100%;
-    /* background-color: aqua; */
-    padding: 20px;
-    margin-top: 4vh;
-}
-.hero-container .hero-img{
-    height: 88vh;
-    width: 90vw;
-    background: url(./assets/suits-production.jpg);
-    background-size: cover;
-    padding: 3.5vh;
+/* ------ HEADER SECTION ------ */
+.hero-section{
+    height: calc(100vh - var(--nav-height));
+    background: url("./assets/suits-production.jpg") center/cover no-repeat;
+    min-height: 400px;
+    margin-bottom: 15rem;
+    background-color: aqua;
     position: relative;
 }
-
-.hero-container .hero-img .over-text{
+.hero-section::after {
+    content: "";
     position: absolute;
-    width: 95%;
-    bottom: 4vh;
-    color: white;
-}
-.hero-container .hero-img .over-text .row-1{
-    color: rgb(255, 255, 255);
-}
-
-.hero-container .hero-img .over-text .row-1 h1{
-    margin-bottom: 2vh;
-}
-
-.hero-container .hero-img .over-text .row-1 h3{
-    color: rgb(255, 255, 255);
-}
-
-.hero-container .hero-img .over-text .row-1 h3{
-    margin-top: 3vh;
-}
-
-.images-container{
-    height: 25vh;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    /* background-color: aqua; */
-    margin-top: 7vh;
-    justify-content: space-evenly;
-    overflow: hidden;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    z-index: 1;
+}
+.text-over{
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    padding: var(--margin-inline-medium);
+    position: absolute;
+    bottom: 0rem;
+    z-index: 2;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+.over-heading{
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+.bb{
+    border-bottom: 1px solid var(--white);
+    width: 100%;
+    font-size: 5rem;
+    font-weight: 900;
+    border-bottom: 2px solid #fff;
 }
 
-.images-container .image-row{
-    /* background-color: black; */
-    height: 100%;
-    justify-content: space-around;
-    animation: movingAnimation 15s linear infinite;
+
+/* ------------------- MAIN BODY ----------------------- */
+
+/* --------- ACTORS SECTION -------- */
+.actors-section{
+    margin-bottom: 15rem;
 }
-
-
-
-.images-container .image-row .image{
-    /* background-color: blue; */
-    height: 100%;
-    text-align: center;
-    margin: 2vh 2vw;
+.actor-heading{
+    margin-bottom: 6rem;
 }
-
-.images-container .image-row .image img{
-    height: 20vh;
-    width: 11vw;
+.actors-rows{
+    gap: 8rem;
+    position: relative;
+    margin-bottom: 6rem;
+    /* background-color: #919191; */
+}
+.actor-row{
+    gap: 8rem;
+    animation: float 12s linear infinite;
+    width: max-content;
+}
+.actor{
+    flex-direction: column;
+}
+.actor-img{
     border-radius: 50%;
+    width: 19rem;
 }
-
-@keyframes movingAnimation {
+@keyframes float {
     from{
-        transform: translate(0%);
-    } 
-    to {
-        transform: translate(-100%);
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
     }
 }
-
 .blur-left{
     background: linear-gradient(90deg, #ffffff, transparent);
     z-index: 10;
-    height: 25%;
+    height: 100%;
     width: 15%;
     position: absolute;
     left: 0;
 }
 .blur-right{
     background: linear-gradient(90deg, transparent, #ffffff);
-    z-index: 2;
-    height: 25%;
+    z-index: 20;
+    height: 100%;
     width: 15%;
     position: absolute;
     right: 0;
 }
 
 
-/* ---------------- duo-container--------------- */
-
-.best-duo-container{
-    /* height: 100vh; */
-    width: 100%;
-    /* background-color: rgb(197, 40, 40); */
-    margin-top: 3vh;
-    padding: 5vh 5vw;
-}
-
-
-
-.best-duo-container .duo-content{
-    height: 100%;
-    width: 100%;
+/* --------- ABOUT SECTION -------- */
+.about-section{
+    min-height: 80vh;
     justify-content: space-between;
-    margin-top: 5vh;
-    /* background-color: blue; */
-}
-
-/* ================left============= */
-
-.best-duo-container .duo-content .content-left{
-    height: 100%;
-    width: 48%;
-    /* background-color: cadetblue; */
-}
-
-.best-duo-container .duo-content .content-left .image-left{
-    height: 100%;
-    /* background-color: aqua; */
-    /* margin-top: 2vh; */
-}
-
-.best-duo-container .duo-content .content-left .image-left img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.best-duo-container .duo-content .content-left .name h3{
-    margin-top: 1vh;
-}
-
-
-
-/* ===============right================= */
-
-.best-duo-container .duo-content .content-right{
-    height: 100%;
-    width: 50%;
-    /* background-color: cadetblue; */
-    flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 8rem;
 }
-
-.best-duo-container .duo-content .content-right .image-right{
-    height: 100%;
-    /* background-color: aquamarine; */
-    /* margin-top: 2vh; */
+.about{
+    margin-bottom: 3rem;
 }
-
-.best-duo-container .duo-content .content-right .image-right img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.about-text{
+    width: 48%;
 }
-
-.best-duo-container .duo-content .content-right .quote {
-    margin: 5vh;
-    font-size: 2rem;
-}
-
-.best-duo-container .duo-content .content-right .quote h3{
-    color: rgb(145, 145, 145);
-}
-
-.best-duo-container .duo-content .content-right .quote h4{
-    margin-top: 2vh;
+.about-img{
+    height: 70.5vh;
+    width: 45%;
+    background: url("./assets/suits-poster.webp");
+    background-size: cover;
+    align-self: flex-end;
 }
 
 
-.win-duo{
-    height: 100vh;
-    /* background-color: bisque; */
-    position: relative;
-    top: 0;
-    flex-direction: column;
-    margin-top: 3vh;
+/* --------- MAIN CHARACTERS SECTION -------- */
+.main-characters{
+    margin-bottom: 15rem;
 }
-
-.win-duo .duo-image{
-    height: 85vh;
-    width: 88%;
-    background-color: aqua;
+.main-char-heading{
+    margin-bottom: 4rem;
 }
-
-.win-duo .duo-image img{
-    height: 100%;
-    width: 100%;
-}
-
-.win-duo .duo-quote{
-    margin-top: 1vh;
-}
-
-
-.all-characters{
-    flex-direction: column;
-    width: 100%;
-}
-
-.characters-container{
-    /* height: 100vh; */
-    width: 100%;
-    /* background-color: yellowgreen; */
-    flex-direction: column;
-    margin-top: 8vh;
-}
-
-.characters-head{
-    margin-bottom: 4vh;
-}
-
-.characters{
+.char-wrapper{
     height: 20vh;
-    width: 88%;
-    /* background-color: wheat; */
-    border-top: 1px solid black;
-    /* margin-top: 2vh; */
+    justify-content: space-between;
+    border-top: 1px solid var(--black);
 }
-
-.discription-characters{
-    width: 50%;
-    /* background-color: aqua; */
+.char-info{
+    width: 90%;
+    align-items: flex-start;
     justify-content: flex-start;
-    gap: 8vw;
-    font-size: 2rem;
-    position: relative;
 }
-.discription-characters #num{
-    position: absolute;
-    top: 0;
+.num{
+    margin-right: 5rem;
 }
-
-.discription-characters .para{
-    margin-left: 5vw;
+.char{
+    margin-bottom: 2rem;
 }
-
-.discription-characters .para p{
-    font-size: 1rem;
-    margin-top: 2vh;
-    color: grey;
+.bbb{
+    border-bottom: 1px solid var(--black);
 }
-
-.character-image{
-    height: 100%;
-    width: 50%;
-    /* background-color: bisque; */
-}
-
-.character-image img{
-    height: 100%;
-    width: 30%;
-    border-radius: 0%;
-    object-fit: cover;
-    opacity: 0;
-    transform: translateX(233%);
-    transition: all .4s ease-in-out;
-}
-
-.characters:hover .character-image img{
-    opacity: 1;
+.char-img{
+    width: 180px;
+    background-size: cover;
     border-radius: 50%;
-    transform: translateX(-1%);
 }
 
 
-
-.moving-logo{
-    height: 10vh;
+/* --------- BEST DUO SECTION -------- */
+.duo-heading{
+    margin-bottom: 4rem;
+}
+.duo-wrapper{
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5rem;
+}
+.duo-img-port{
+    width: 650px;
+}
+.duo-img-land{
+    width: 650px;
+    margin-bottom: 3rem;
+}
+.quote-wrap{
+    padding: var(--margin-inline-medium);
+}
+.quote-head{
+    margin-bottom: 2rem;
+    color: #919191;
+}
+.quote{
+    margin: var(--margin-inline-medium);
+}
+.big-duo-img{
     width: 100%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    margin-top: 4vh;
-    overflow: hidden;
 }
-
-.logo h2{
-    margin-right: 5vw;
-}
-
-.logo{
-    animation: moving-logo 10s linear infinite;
-}
-
-@keyframes moving-logo {
-    from{
-        transform: translate(0%);
-    } 
-    to {
-        transform: translate(-100%);
-    }
+.big-quote{
+    text-align: center;
+    font-size: 8rem;
+    margin: var(--margin-block-medium);
 }
 
 
-.closer{
-    height: 9vh;
-    width: 100%;
-    margin: 2vh 0vw;
-    font-size: 1.2rem;
+/* --------- FOOTER SECTION -------- */
+.moving-suits{
+    gap: 8rem;
+    border-top: 1.5px solid var(--black);
+    border-bottom: 1.5px solid var(--black);
+    height: 8rem;
+}
+
+.credits{
+    margin: var(--margin-block-medium);
+    text-align: center;
 }
