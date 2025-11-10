@@ -1,11 +1,233 @@
-@media (max-width: 768px) {
+/* --- 1390px --- */
+@media (max-width: 86rem) {
+  /* 1390px / 16px =  86rem*/
+  /* 86rem * 16px = 1390px */
+
+  html{
+    font-size: 56.25%;
+    /* 56.25% of 16px = 9px */
+  }
+
+  /* HERO SECTION FIX — apply early */
   .hero-section {
-    height: 80vh;
+    height: auto;
+    aspect-ratio: 16/10;
+    background: url("./assets/suits-production.jpg") center top / cover no-repeat;
+    margin-bottom: 10rem;
   }
-  .bb {
-    font-size: 2.5rem;
-  }
+
   .text-over {
-    padding: 2rem;
+    position: absolute;
+    bottom: 4rem;
+    left: 3rem;
+    right: 3rem;
+    align-items: flex-start;
+  }
+
+  .over-heading.bb {
+    font-size: 4rem;
+  }
+
+  .over-heading {
+    font-size: 2rem;
+  }
+}
+
+/* --- 1200px --- */
+@media (max-width: 75rem) {
+  /* 1200px / 16px =  86rem*/
+  /* 75rem * 16px = 1200px */
+
+  html{
+    font-size: 50%;
+    /* 50% of 16px = 8px */
+  }
+    /* ACTORS-SECTION */
+  .actor-img{
+    width: 18rem;
+  }
+}
+
+/* --- 992px --- */
+@media (max-width: 62rem) {
+  /* 992px / 16px =  62rem*/
+  /* 62rem * 16px = 992px */
+  
+  html{
+    font-size: 43.79%;
+    /* 43.79% of 16px = 7.0064px */
+  }
+
+  :root{
+    --nav-height: 90px;
+  }
+
+  .nav-links{
+    gap: 6rem;
+  }
+
+  /* ACTORS-SECTION */
+  .actor-img{
+    width: 17rem;
+  }
+
+  /* ABOUT-SECTION */
+  .about-section {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    text-align: start;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* keeps image proportion clean */
+    background: url("./assets/about-land.jpg") center top / contain no-repeat;
+    min-height: auto;
+    max-width: none;
+    align-self: flex-start;
+  }
+  .big-quote{
+    font-size: 7rem;
+  }
+
+  .char-img{
+    opacity: 1;
+    scale: 1;
+  }
+  .num{
+    margin-right: 4rem;
+  }
+}
+
+/* --- 752px --- */
+@media (max-width: 47rem) {
+  /* 752px / 16px = 47rem */
+  /* 47rem * 16px = 752px */
+
+  html{
+    font-size: 38%;
+    /* 38% of 16px = 6.08px */
+  }
+  .nav-links{
+    gap: 5rem;
+  }
+  .char-wrapper{
+    height: 19vh;
+  }
+  .big-quote{
+    font-size: 5.5rem;
+  }
+  .num{
+    margin-right: 3rem;
+  }
+  :root{
+    --nav-height: 60px
+  }
+  .navbar{
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+  }
+  .navbar a>h1{
+    font-size: var(--text-h3);
+  }
+  .link{
+    font-size: var(--text-h4);
+  }
+  .actors-section{
+    margin-bottom: 8rem;
+  }
+  .about-section{
+    margin-bottom: 10rem;
+  }
+  .quote{
+    margin: 0;
+  }
+}
+
+/* --- 520px --- */
+@media (max-width: 32.5rem) {
+  /* 520px / 16px = 32.5rem */
+  /* 32.5rem * 16px = 520px */
+
+  html{
+    font-size: 35%;
+    /* 35% of 16px = 5.6px */
+  }
+
+  .nav-links{
+    gap: 3.5rem;
+  }
+  .over-heading.bb{
+    font-size: 2.5rem;
+    font-weight: 200;
+    border-bottom: 1px solid #fff;
+  }
+  .hero-section{
+    margin-bottom: 5rem;
+  }
+  .big-quote{
+    font-size: 4rem;
+  }
+  .num{
+    margin-right: 2rem;
+  }
+  :root{
+    --nav-height: 55px
+  }
+  .navbar a>h1{
+    font-size: var(--text-h4);
+  }
+  .link{
+    font-size: var(--text-h5);
+  }
+  .actors-section{
+    margin-bottom: 0rem;
+  }
+  .actor-heading{
+        margin-bottom: 2rem;
+  }
+  .about-section{
+    margin-bottom: 10rem;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .actors-rows{
+        gap: 6rem;
+  }
+  .actor-img{
+    width: 15rem;
+  }
+}
+
+/* --- 405px --- */
+@media (max-width: 405px) {
+  .duo-name{
+    font-size: var(--text-h4);
+  }
+  .quote{
+    font-size: var(--text-paragraph);
+  }
+  .about-section{
+    justify-content: center;
+  }
+}
+
+/* --- 375px --- */
+@media (max-width: 375px) {
+  .text-over{
+    padding: 0;
+    margin-bottom: 0px;
+  }
+  .actor-row{
+    gap: 3rem;
+  }
+  .quote-wrap{
+    padding: 0px;
   }
 }
