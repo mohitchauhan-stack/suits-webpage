@@ -189,6 +189,12 @@ span {
 .link:hover{
     text-decoration: underline;
 }
+.link{
+    display: block;
+}
+.icon{
+    display: none;
+}
 
 /* ------ HEADER SECTION ------ */
 .hero-section{
