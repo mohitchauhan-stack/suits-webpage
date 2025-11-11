@@ -18,13 +18,16 @@ Built with **HTML** and **CSS**, the project features a cinematic hero, cast hig
 ## 🖼️ Screenshots
 
 ### 📱 Mobile View
-![Mobile View Screenshot](./assets/footer-page.png)
+![Mobile View Screenshot](./assets/mobile-view.png)
 
 ### 🏠 Home Page
 ![Home Page Screenshot](./assets/landing-page.png)
 
 ### 📄 Main Page
 ![Journal Entry Screenshot](./assets/about-page.png)
+
+### 👇🏻 Footer Page
+![Journal Entry Screenshot](./assets/footer-page.png)
 
 
 ---
